@@ -10,15 +10,21 @@ class _NewCasePageState extends State<NewCasePage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      backgroundColor: Colors.grey,
         appBar: new AppBar(
           title: Text("Add New Case", style: TextStyle(color: Colors.white)),
           centerTitle: true,
-          backgroundColor: Colors.black38,
+          backgroundColor: Colors.black45,
         ),
         body:
         Column(
-            children: <Widget>[editText()]
-        )
+            children: <Widget>[
+              editText(),
+              Text("If", style: TextStyle(color: Colors.green, fontSize: 26)),
+
+            ]
+        ),
+      //backgroundColor: Colors.black12
     );
   }
 
@@ -35,11 +41,25 @@ class _NewCasePageState extends State<NewCasePage> {
             flex: 1,
           ),
           Expanded(
-            child:TextField(style: TextStyle(fontSize: 24), maxLines:1),
+            child:TextField(style: TextStyle(color: Colors.green, fontSize: 26), maxLines:1),
             flex: 9,
           )
         ],
       )
     );
   }
+
+  Widget ifText(Icon conditionIcon, String desText, int relation){
+    return new Container(
+      width: 420,
+      padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
+        child: new ListView.builder(
+          itemCount: items.l,
+          itemBuilder: (context, index),
+        ),
+    );
+  }
 }
+
+
+class ifT

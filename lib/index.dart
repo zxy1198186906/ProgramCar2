@@ -22,7 +22,7 @@ class _NavigationPageState extends State<NavigationPage>{
       appBar: new AppBar(
         title: new Text("PMyCar", style: TextStyle(color: Colors.white)),
         centerTitle: true,
-        backgroundColor: Colors.black38,
+        backgroundColor: Colors.black54,
 
       ),
       body:
@@ -32,7 +32,7 @@ class _NavigationPageState extends State<NavigationPage>{
           child: Icon(Icons.add),
           onPressed: changeNewState),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black38,
+        backgroundColor: Colors.black54,
           items: [
             BottomNavigationBarItem(
                 icon: Icon(Icons.cloud, color: _currentIndex == 0? _navigationColorPressed : _navigationColorUnpressed),

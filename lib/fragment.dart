@@ -10,7 +10,7 @@ class _TopFragmentState extends State<TopFragment>{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.black12
+      backgroundColor: Colors.grey,
     );
   }
 
@@ -26,7 +26,7 @@ class _MyFragmentState extends State<MyFragment>{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        backgroundColor: Colors.black12
+      backgroundColor: Colors.grey,
     );
   }
 
