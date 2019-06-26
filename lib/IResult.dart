@@ -1,18 +1,21 @@
 import 'package:helloworld/ICondition.dart';
 import 'package:flutter/services.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audio_cache.dart';
 
-abstract class IResult extends ICondition{
-  void startAction();
-  void stopAction();
+class IResult extends ICondition{
+  IResult(mContext, String mName, int mMsgType, String mDesText, int mRelation, bool mRun) : super(mContext, mName, mMsgType, mDesText, mRelation, mRun);
+
+  void startAction(){}
+  void stopAction(){ }
 }
 
 class ClockResult extends IResult{
   var _mContext;
+
   static const methodChannel = const MethodChannel("programcar.flutter.io/clock");
 
-  ClockResult(var context){
-    _mContext = context;
-  }
+  ClockResult(mContext, String mName, int mMsgType, String mDesText, int mRelation, bool mRun) : super(mContext, mName, mMsgType, mDesText, mRelation, mRun);
 
   @override
   bool find(int equation, int number) {
@@ -48,9 +51,12 @@ class ClockResult extends IResult{
 class MediaResult extends IResult{
   var _mContext;
 
+  AudioPlayer player = AudioPlayer();
 
-  MediaResult(var context){
-    _mContext = context;
+  MediaResult(mContext, String mName, int mMsgType, String mDesText, int mRelation, bool mRun) : super(mContext, mName, mMsgType, mDesText, mRelation, mRun);
+  
+  Future _loadMusic() async{
+    player = await AudioCache().loop('aircity.mp3');
   }
 
   @override
@@ -62,12 +68,31 @@ class MediaResult extends IResult{
   @override
   void startAction() {
     // TODO: implement startAction
+    _loadMusic();
   }
 
   @override
   void stopAction() {
     // TODO: implement stopAction
+    player?.stop();
   }
+}
+
+class GpsResult extends IResult {
+  var _mContext;
+
+  GpsResult(mContext, String mName, int mMsgType, String mDesText, int mRelation, bool mRun) : super(mContext, mName, mMsgType, mDesText, mRelation, mRun);
 
 
+  @override
+  void startAction() { }
+
+  @override
+  void stopAction() { }
+
+  @override
+  bool find(int equation, int number) {
+    // TODO: implement find
+    return null;
+  }
 }

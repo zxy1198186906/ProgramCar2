@@ -54,12 +54,7 @@ class _NewCasePageState extends State<NewCasePage> {
       width: 420,
       padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
         child: new ListView.builder(
-          itemCount: items.l,
-          itemBuilder: (context, index),
         ),
     );
   }
 }
-
-
-class ifT
