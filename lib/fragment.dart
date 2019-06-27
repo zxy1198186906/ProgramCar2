@@ -13,7 +13,6 @@ class _TopFragmentState extends State<TopFragment>{
       backgroundColor: Colors.grey,
     );
   }
-
 }
 
 class MyFragment extends StatefulWidget{

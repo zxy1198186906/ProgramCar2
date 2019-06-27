@@ -43,6 +43,15 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - image/clock.png
+    - image/line.png
+    - image/location.png
+    - image/message.png
+    - image/music.png
+    - image/temper.png
+    - image/time.png
+    - image/wifi.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
